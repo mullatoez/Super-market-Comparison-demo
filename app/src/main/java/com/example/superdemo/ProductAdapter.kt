@@ -1,5 +1,6 @@
 package com.example.superdemo
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,11 +51,8 @@ class ProductCustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
 
     init {
         itemView.setOnClickListener {
-            Toast.makeText(
-                itemView.context,
-                "Ooh sorry. The feature isn't available for now", Toast.LENGTH_SHORT
-            )
-                .show()
+            val intent = Intent(itemView.context, ProductComparisonActivity::class.java)
+            itemView.context.startActivity(intent)
         }
     }
 
