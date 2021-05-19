@@ -13,4 +13,9 @@
         android:icon="@drawable/ic_help"
         android:title="Help" />
 
+    <item
+        android:id="@+id/ic_add_product"
+        android:icon="@drawable/ic_add_pdt"
+        android:title="Add Product" />
+
 </menu>

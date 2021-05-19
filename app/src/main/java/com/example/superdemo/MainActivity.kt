@@ -57,8 +57,21 @@ class MainActivity : AppCompatActivity() {
                 performSearch()
                 true
             }
+
+            R.id.ic_add_product -> {
+                addProduct()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun addProduct() {
+        Toast.makeText(
+            this,
+            "Ooh sorry. The feature isn't available for now", Toast.LENGTH_SHORT
+        )
+            .show()
     }
 
     private fun performSearch() {
