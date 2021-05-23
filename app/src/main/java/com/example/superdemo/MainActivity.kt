@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         productAdapter.submitList(data)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+   /* override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.main_menu, menu)
         return true
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
+    }*/
 
     private fun addProduct() {
         Toast.makeText(

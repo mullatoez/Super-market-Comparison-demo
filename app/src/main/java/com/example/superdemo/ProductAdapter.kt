@@ -54,12 +54,22 @@ class ProductCustomViewHolder(itemView: View, var product: ProductModel? = null)
 
     companion object {
         val PRODUCT_TITLE = "Product Title"
+        val PRODUCT_IMAGE = "Product Image"
+        val SUPER_ONE = "SUPER ONE"
+        val SUPER_ONE_PRICE = "SUPER ONE PRICE"
+        val SUPER_TWO = "SUPER TWO"
+        val SUPER_TWO_PRICE = "SUPER TWO PRICE"
     }
 
     init {
         itemView.setOnClickListener {
             val intent = Intent(itemView.context, ProductComparisonActivity::class.java)
             intent.putExtra(PRODUCT_TITLE, product?.productName)
+            intent.putExtra(PRODUCT_IMAGE, product?.productImage)
+            intent.putExtra(SUPER_ONE, product?.supermarketOneName)
+            intent.putExtra(SUPER_ONE_PRICE, product?.supermarketOnePrice)
+            intent.putExtra(SUPER_TWO, product?.supermarketTwoName)
+            intent.putExtra(SUPER_TWO_PRICE, product?.supermarketTwoPrice)
             itemView.context.startActivity(intent)
         }
     }
