@@ -35,6 +35,8 @@ class ProductAdapter : RecyclerView.Adapter<ProductCustomViewHolder>() {
         val imageTarget = holder.productImage
         Picasso.get().load(item.productImage).into(imageTarget)
 
+        holder.product = item
+
     }
 
     fun submitList(productList: List<ProductModel>) {
@@ -42,16 +44,22 @@ class ProductAdapter : RecyclerView.Adapter<ProductCustomViewHolder>() {
     }
 }
 
-class ProductCustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class ProductCustomViewHolder(itemView: View, var product: ProductModel? = null) :
+    RecyclerView.ViewHolder(itemView) {
 
     val productName: TextView = itemView.findViewById(R.id.textView_product_name)
     val productDesc: TextView = itemView.findViewById(R.id.textView_product_description)
     val productInStock: TextView = itemView.findViewById(R.id.textView_in_stock)
     val productImage: ImageView = itemView.findViewById(R.id.imageView_product)
 
+    companion object {
+        val PRODUCT_TITLE = "Product Title"
+    }
+
     init {
         itemView.setOnClickListener {
             val intent = Intent(itemView.context, ProductComparisonActivity::class.java)
+            intent.putExtra(PRODUCT_TITLE, product?.productName)
             itemView.context.startActivity(intent)
         }
     }
