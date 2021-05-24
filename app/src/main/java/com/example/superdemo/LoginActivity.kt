@@ -21,6 +21,11 @@ class LoginActivity : AppCompatActivity() {
             performUserLogin()
 
         }
+
+        binding.textViewNoAccountRegisterNow.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun performUserLogin() {
